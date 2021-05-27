@@ -1,0 +1,110 @@
+.header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 0 10px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 0 10px -5px black;
+}
+.searchbar
+{
+    display: flex;
+    align-items: center;
+    flex: 1;
+    padding: 5px 0;
+}
+.searchbar svg
+{
+    color: blue;
+}
+.user-img
+{
+    padding: 0 5px;
+    border-radius: 50%;
+}
+.searchbar input[type="text"]
+{
+    padding: 12px;
+    font-size: 16px;
+    width: 20vw;
+    border: none;
+    background-color: #eee;
+    outline: none;
+    border-radius: 20px;
+}
+.menubar
+{
+    display: flex;
+    
+    flex: 1.5;
+}
+svg
+{
+    position: relative;
+    cursor: pointer;
+}
+.menubar svg
+{
+    min-width: 30px;
+    height: 100%;
+    padding: 0 45px;
+    
+}
+
+
+.options
+{
+    display: flex;
+    
+    align-items: center;   
+    justify-content: flex-end;
+    flex: 1;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.options li
+{
+    height: 40px;
+    padding: 0 10px 0 10px;
+    display: inline-block;
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
+     
+}
+.options li:not(:first-child)
+{
+    /* min-width: 20px; */
+    
+    background-color: #eee;
+   border-radius: 50%;
+}
+span{
+
+    display: inline-block;
+}
+
+.active
+{
+    position: relative;
+    /* color: dodgerblue; */
+    color: blue;
+}
+.active::before
+{
+    content: "";
+    position: absolute;
+    background-color: blue;
+    
+    height: 3px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}

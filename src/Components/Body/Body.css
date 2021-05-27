@@ -1,0 +1,75 @@
+.body-container
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0px 0px;
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+}
+hr
+{
+    width: 80%;
+    /* background-color: white; */
+    /* color: white; */
+    border: 1px solid #dcdcdc;
+    /* height: 2px; */
+}
+.sidebar,
+.contacts
+{
+    flex: .8;
+}
+.sidebar,
+.contacts,
+.feed
+{
+    
+    max-height: inherit;
+    overflow-y: scroll;
+}
+
+*::-webkit-scrollbar
+{
+    opacity: 0;
+}
+
+/* .sidebar:hover::-webkit-scrollbar-thumb,
+.contacts
+{
+    background-color: red;
+} */
+
+.sidebar ul li,
+.contacts ul li
+{
+    display: flex;
+    align-items: center;
+
+    padding: 10px 0;
+}
+.sidebar h3,
+.contacts h3
+{
+    padding: 0 10px;
+    color: gray;
+}   
+
+.sidebar ul li svg,
+.contacts ul li svg,
+.sidebar ul li img
+{
+    color: blue;
+    border-radius: 50%;
+    padding: 0 15px;
+}
+
+.sidebar ul li span,
+.contacts ul li span
+{
+    font-weight: 600;
+}
+
+.feed
+{
+    flex: 1.5;
+}

@@ -1,0 +1,280 @@
+.loading
+{
+    margin-bottom: 50px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border-top: 5px solid blue;
+    border-right: 5px solid lightgray;
+    border-bottom: 5px solid lightgray;
+    border-left: 5px solid lightgray;
+    animation-name: rotate;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    transform-origin: 50% 50%;
+}
+
+@keyframes rotate
+{
+    from{transform:rotateZ(0deg)}
+    to{transform:rotateZ(360deg)}
+}
+
+.feed
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.stories
+{
+    display: flex;
+    justify-content: center;
+}
+.stories div
+{
+    position: relative;
+    height: 200px;
+    width: 110px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 10px 5px;
+
+}
+
+.stories div:hover img
+{
+    transform: scale(1.1);
+}
+
+.stories div::after
+{
+    content: '';
+    position: absolute;
+    background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.5));
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.stories img
+{
+    height: 200px;
+    transition: transform .2s;
+}
+.stories span
+{
+    position: absolute;
+    z-index: 999;
+    bottom: 10px;
+    left: 10px;
+    
+    color: white;
+    font-weight: 600;
+}
+
+.upload
+{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 5px -3px black;
+    padding: 5px 15px;
+    margin: 15px 0;
+}
+
+.upload-form
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+.upload-form svg
+{
+    font-size: 40px;
+    flex: .2;
+}
+.upload-form svg:last-child
+{
+    font-size: 30px;
+}
+.upload-form input
+{
+    min-width: 0;
+    outline: none;
+    background-color: #eee;
+    padding: 10px 10px;
+    border: none;
+    font-size: 16px;
+    border-radius: 20px;
+}
+.upload-form input:nth-child(2)
+{
+    flex: 1 ;
+}
+.upload-form input:nth-child(3)
+{
+    flex: .5 ;
+}
+
+.upload-other
+{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+.upload-other div
+{
+    display: flex;
+    align-items: center;
+}
+.upload-other div svg
+{
+    font-size: 30px;
+    margin: 0 10px;
+}
+
+.posts
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.post
+{
+    width: 80%;
+    margin: 10px 0;
+    padding: 10px 0;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px -8px black;
+
+}
+
+.post-header
+{
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+.post-header svg
+{
+    flex: 0.1;
+    font-size: 50px;
+}
+.post-header div
+{
+    flex: 1;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+}
+.post-header div span:first-child
+{
+    font-weight: 600;
+    font-size: 18px;
+    
+}
+
+.post-body p
+{
+    padding: 0 10px;
+}
+
+.post-body img
+{
+    width: 100%;
+}
+
+.reactions
+{
+    
+    display: flex;
+    justify-content: center;
+    /* padding: 10px; */
+
+}
+.reactions > div:not(:first-child)
+{
+    position: relative;
+    display: flex;
+    padding: 10px;
+    margin: 0 10px;
+}
+
+.reactions > div:first-child
+{
+    display: block;
+}
+
+.reactions > div:hover
+{
+    background-color: #eee;
+    
+    cursor: pointer;
+}
+
+.reactions svg, 
+.reactions  img:first-child
+{
+    margin: 0 10px;
+}
+
+
+.like-reaction:hover .reaction-tray
+{
+    visibility: visible;
+    transition: .6s;
+    
+    animation-name: slideup;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+.hide
+{
+    visibility: hidden!important;
+}
+@keyframes slideup
+{
+    0%{transform: translateY(-50%);}
+    100%{transform: translateY(-100%);}
+}
+.reaction-tray
+{
+    visibility: hidden;
+    position: absolute!important;
+    display: flex;
+    padding: 2px;
+    background-color: white;
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    
+}
+.reaction-tray > img:hover
+{
+    transform: scale(1.2);
+}
+.reaction-tray > img
+{
+    font-size: 2em;
+    transition: .1s;
+}
+.reaction-tray > img:not(:last-child)
+{
+    margin: 0 7px 0 0!important; 
+}
+
+.blank
+{
+    min-height: 100px;
+    /* width: 200px; */
+}
