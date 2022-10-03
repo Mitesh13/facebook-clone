@@ -46,17 +46,16 @@ const Feed = ({user}) => {
         
     },[limit])
 
-    const loadMore = () =>{
-        // console.log(e.target.scrollHeight)
+    const loadMore = (e) =>{
         let id;
         
         return function(e) {
             
             if(!id)
             {
-                // console.log("called");    
+                console.log("called",e.target.scrollTop + e.target.clientHeight,e.target.scrollHeight);    
                 // id = setTimeout(()=>{
-                    if(e.target.scrollTop + e.target.clientHeight === e.target.scrollHeight)
+                    if(e.target.scrollTop + e.target.clientHeight >= e.target.scrollHeight)
                     {
                         console.log(totalPosts,posts.length);
                         if(totalPosts!==posts.length)
