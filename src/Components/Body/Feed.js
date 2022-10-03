@@ -55,8 +55,7 @@ const Feed = ({user}) => {
             if(!id)
             {
                 // console.log("called");    
-                id = setTimeout(()=>{
-                    console.log(e.target.scrollTop + e.target.clientHeight)
+                // id = setTimeout(()=>{
                     if(e.target.scrollTop + e.target.clientHeight === e.target.scrollHeight)
                     {
                         console.log(totalPosts,posts.length);
@@ -67,8 +66,8 @@ const Feed = ({user}) => {
                         }
                         
                     }
-                    id = null
-                },400)
+                    // id = null
+                // },400)
             }
         }
          
@@ -83,7 +82,7 @@ const Feed = ({user}) => {
             
                 !isLoading ?
                 
-                <Posts posts={posts} isLoadingMore={isLoadingMore}/>        
+                <Posts posts={posts} user={user} isLoadingMore={isLoadingMore}/>        
                 
                 :
                 <Loading />
@@ -136,7 +135,7 @@ const Upload = ({user}) =>{
         <div className="upload">
             <div className="upload-form">
                 {/* <AccountCircleIcon /> */}
-                <img src={user.photoURL} alt="photu" height="30" className="user-img"/>
+                <img src={user.photoURL} alt="photo" height="30" className="user-img"/>
 
                 <input ref={body} type="text" placeholder="Whats on your mind?"/>
                 <input ref={media} type="text" placeholder="Image/GIF URL"/>
@@ -161,7 +160,7 @@ const Upload = ({user}) =>{
     )
 }
 
-const Posts = ({posts, isLoadingMore}) =>{
+const Posts = ({posts, user, isLoadingMore}) =>{
     
         
     
@@ -169,7 +168,7 @@ const Posts = ({posts, isLoadingMore}) =>{
     return(
             <div className="posts">
             {
-                posts.map(post=><Post key={post.id} post={post.data()}/>)
+                posts.map(post=><Post key={post.id} user={user} post={post.data()}/>)
             
             }
             {
